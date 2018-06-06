@@ -16,6 +16,7 @@ class Mammals(Animal):
     gives_meat = False
 
     def we_have(self):
+        super().__init__(a_name, a_sound)
         if self.gives_milk:
             print('Дает молоко.')
         elif self.gives_meat:
@@ -26,13 +27,14 @@ class Birds(Animal):
     gives_eggs = False
 
     def we_have(self):
+        super().__init__(a_name, a_sound)
         if self.gives_eggs:
             print('Несет яйца.')
 
 
 class Big_Cows(Mammals):
     def __init__(self, litres):
-        super(Big_Cows, self).__init__('cow', 'mumu')
+        super().__init__('cow', 'mumu')
         self.milk_out_litres = litres
         self.gives_milk = True
 
